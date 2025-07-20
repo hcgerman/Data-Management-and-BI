@@ -67,8 +67,6 @@
     <Build Include="Schema\Tables\orders.sql" />
     <Build Include="Schema\Tables\employees.sql" />
     <Build Include="Schema\Tables\shippers.sql" />
-    <Build Include="Schema\Tables\customer_customer_demo.sql" />
-    <Build Include="Schema\Tables\customer_demographics.sql" />
     <Build Include="Schema\Tables\employee_territories.sql" />
     <Build Include="Schema\Tables\order_details.sql" />
     <Build Include="Schema\Tables\region.sql" />
