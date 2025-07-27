@@ -5,7 +5,7 @@
 	
 	[ProductSK] [int] NOT NULL,
 	[CustomerSK] [int] NULL,
-	[EmployeeTerritorySK] [int] NULL,
+	[EmployeeSK] [int] NULL,
 	[ShipperSK] [int] NULL,
 
 	[UnitPrice] [money] NOT NULL,
@@ -39,7 +39,7 @@ GO
 ALTER TABLE [dbo].[FactOrders] ADD CONSTRAINT [FK_DimCustomer] FOREIGN KEY([CustomerSK]) REFERENCES [dbo].[DimCustomer] ([CustomerSK]);
 GO
 
-ALTER TABLE [dbo].[FactOrders] ADD CONSTRAINT [FK_BridgeEmployeeTerritorySK] FOREIGN KEY([EmployeeTerritorySK]) REFERENCES [dbo].[DimEmployeeTerritory] ([EmployeeTerritorySK]);
+ALTER TABLE [dbo].[FactOrders] ADD CONSTRAINT [FK_EmployeeSK] FOREIGN KEY([EmployeeSK]) REFERENCES [dbo].[DimEmployee] ([EmployeeSK]);
 GO
 
 ALTER TABLE [dbo].[FactOrders] ADD CONSTRAINT [FK_DimShipper] FOREIGN KEY([ShipperSK]) REFERENCES [dbo].[DimShipper] ([ShipperSK]);

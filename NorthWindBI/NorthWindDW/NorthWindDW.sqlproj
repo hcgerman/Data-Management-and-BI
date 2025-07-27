@@ -62,6 +62,9 @@
     <Folder Include="Schema\Tables" />
     <Folder Include="Schema\Tables\staging" />
     <Folder Include="Schema\Tables\dbo" />
+    <Folder Include="Schema\Programmability" />
+    <Folder Include="Schema\Programmability\Stored Procedures" />
+    <Folder Include="Scripts" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schema\Security\schemas\staging.sql" />
@@ -81,5 +84,22 @@
     <Build Include="Schema\Tables\dbo\DimShipper.sql" />
     <Build Include="Schema\Tables\dbo\DimProduct.sql" />
     <Build Include="Schema\Tables\dbo\FactOrders.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetLastPackageRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\UpdateLastPackageRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDimCustomer.sql" />
+    <None Include="Schema\Programmability\Stored Procedures\DW_MergeDimEmployeeTerritory.sql" />
+    <None Include="Schema\Programmability\Stored Procedures\DW_MergeDimShipper.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\DimDate.data.sql" />
+    <None Include="Scripts\PackageConfig.data.sql" />
+    <None Include="Scripts\PatchDimDate.data.sql" />
+    <None Include="Schema\Programmability\Stored Procedures\DW_MergeDimEmployee.sql" />
+    <None Include="Schema\Programmability\Stored Procedures\DW_MergeDimProduct.sql" />
+    <None Include="Schema\Programmability\Stored Procedures\DW_MergeDimTerritory.sql" />
+    <None Include="Schema\Programmability\Stored Procedures\DW_MergeFactOrders.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
   </ItemGroup>
 </Project>
