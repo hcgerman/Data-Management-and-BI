@@ -58,6 +58,8 @@
     <Folder Include="Properties" />
     <Folder Include="Schema" />
     <Folder Include="Schema\Tables" />
+    <Folder Include="Schema\Programmability" />
+    <Folder Include="Schema\Programmability\Stored Procedures" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schema\Tables\customers.sql" />
@@ -71,5 +73,13 @@
     <Build Include="Schema\Tables\order_details.sql" />
     <Build Include="Schema\Tables\region.sql" />
     <Build Include="Schema\Tables\territories.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetDatabaseRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetCustomerChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetEmployeeChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetEmployeeTerritoryChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetProductChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetShipperChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetTerritoryChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetOrdersChangesByRowVersion.sql" />
   </ItemGroup>
 </Project>
