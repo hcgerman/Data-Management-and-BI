@@ -6,6 +6,6 @@ BEGIN
 	SET [TerritoryDescription]  = sc.[TerritoryDescription]
 	   ,[Region]    = st.[Region]
 	FROM [dbo].[DimTerritory]         dt
-	INNER JOIN [staging].[territory] st ON (dc.[TerritorySK]=st.[TerritorySK])
+	INNER JOIN [staging].[territory] st ON (dt.[TerritorySK]=st.[TerritorySK])
 END
 GO
