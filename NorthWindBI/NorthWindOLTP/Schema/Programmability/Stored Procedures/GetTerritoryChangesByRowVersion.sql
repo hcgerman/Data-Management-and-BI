@@ -5,11 +5,14 @@
 )
 AS
 BEGIN
-	SELECT [TerritoryID]
-			,[TerritoryDescription],
-			[RegionID]
-	FROM [dbo].[Territories]
-	WHERE [rowversion] > CONVERT(ROWVERSION,@startRow) 
-	AND [rowversion] <= CONVERT(ROWVERSION,@endRow);
+	SELECT dt.[TerritoryID]
+			,dt.[TerritoryDescription],
+			oreg.[RegionDescription]
+	FROM [dbo].[Territories] as dt
+	INNER JOIN [dbo].[Region] oreg ON (dt.RegionID = oreg.RegionID)
+	WHERE (dt.[rowversion] > CONVERT(ROWVERSION,@startRow) 
+	AND dt.[rowversion] <= CONVERT(ROWVERSION,@endRow))
+	OR (oreg.[rowversion] > CONVERT(ROWVERSION,@startRow) 
+			AND oreg.[rowversion] <= CONVERT(ROWVERSION,@endRow));
 END
 GO

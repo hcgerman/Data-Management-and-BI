@@ -5,46 +5,46 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-3HD4HF3"
   DTS:CreatorName="DESKTOP-3HD4HF3\Fidelia"
-  DTS:DTSID="{A53FC60B-1EA6-418C-AB9E-6D82F605930B}"
+  DTS:DTSID="{12F0331A-0676-4F5F-AC9A-901CDF376075}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5685.2"
   DTS:LocaleID="16394"
-  DTS:ObjectName="DimShipper"
+  DTS:ObjectName="DimTerritory"
   DTS:PackageType="5"
-  DTS:VersionBuild="38"
-  DTS:VersionGUID="{8666CC6A-E531-4224-9CF2-F17A963434EE}">
+  DTS:VersionBuild="45"
+  DTS:VersionGUID="{B5F6ACC6-995B-46C2-B7B8-131338DA13BB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Destination.NorthWindDW]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{8363D8EB-D45A-4026-A724-8570A37E6D64}"
+      DTS:DTSID="{1CEB2DC3-644C-4F6F-B666-6DA51D07E575}"
       DTS:ObjectName="Destination.NorthWindDW">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Initial Catalog=NorthWindDW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{8363D8EB-D45A-4026-A724-8570A37E6D64}Conexión de datos 1;" />
+          DTS:ConnectionString="Initial Catalog=NorthWindDW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{1CEB2DC3-644C-4F6F-B666-6DA51D07E575}Conexión de datos 1;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Source.NorthWindOLTP]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{F111AE29-F370-42C6-A1E7-3B56D7DB236C}"
+      DTS:DTSID="{595EABC6-EA77-4B0D-8E23-F8FF2966C1E7}"
       DTS:ObjectName="Source.NorthWindOLTP">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Initial Catalog=NorthWind;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{F111AE29-F370-42C6-A1E7-3B56D7DB236C}Conexión de datos;" />
+          DTS:ConnectionString="Initial Catalog=NorthWind;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{595EABC6-EA77-4B0D-8E23-F8FF2966C1E7}Conexión de datos;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{47A55BDD-154B-4B55-8239-E95EBB1345C7}"
+      DTS:DTSID="{5B0C4FB5-56CB-49BE-A8EC-1AE1837B950E}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="dbts">
@@ -53,7 +53,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{534A474C-377B-4817-BC88-728C07636E7D}"
+      DTS:DTSID="{7D7FF4B6-A121-450E-B29A-23EB46AFE312}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LastRowValue">
@@ -63,13 +63,13 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Add Shippers"
+      DTS:refId="Package\Add Territory"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarea Flujo de datos"
-      DTS:DTSID="{C3402FAD-F496-42F9-A14E-A3565F9493CD}"
+      DTS:DTSID="{BF6EAB8F-2779-4463-8E3B-BFF50F325463}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Add Shippers"
+      DTS:ObjectName="Add Territory"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -77,7 +77,7 @@
           version="1">
           <components>
             <component
-              refId="Package\Add Shippers\Add New"
+              refId="Package\Add Territory\Add New"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
               description="Destino de OLE DB"
@@ -92,7 +92,7 @@
                 <property
                   dataType="System.String"
                   description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                  name="OpenRowset">[Add New]</property>
+                  name="OpenRowset">[dbo].[DimTerritory]</property>
                 <property
                   dataType="System.String"
                   description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
@@ -134,7 +134,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Add Shippers\Add New.Connections[OleDbConnection]"
+                  refId="Package\Add Territory\Add New.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[Destination.NorthWindDW]"
                   connectionManagerRefId="Package.ConnectionManagers[Destination.NorthWindDW]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
@@ -142,70 +142,76 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Add Shippers\Add New.Inputs[Entrada de destino de OLE DB]"
+                  refId="Package\Add Territory\Add New.Inputs[Entrada de destino de OLE DB]"
                   errorOrTruncationOperation="Insertar"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="Entrada de destino de OLE DB">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Add Shippers\Add New.Inputs[Entrada de destino de OLE DB].Columns[ShipperID]"
-                      cachedDataType="i4"
-                      cachedName="ShipperID"
-                      externalMetadataColumnId="Package\Add Shippers\Add New.Inputs[Entrada de destino de OLE DB].ExternalColumns[ShipperID]"
-                      lineageId="Package\Add Shippers\Get Records.Outputs[Salida de origen de OLE DB].Columns[ShipperID]" />
-                    <inputColumn
-                      refId="Package\Add Shippers\Add New.Inputs[Entrada de destino de OLE DB].Columns[CompanyName]"
+                      refId="Package\Add Territory\Add New.Inputs[Entrada de destino de OLE DB].Columns[TerritoryID]"
                       cachedDataType="wstr"
-                      cachedLength="40"
-                      cachedName="CompanyName"
-                      externalMetadataColumnId="Package\Add Shippers\Add New.Inputs[Entrada de destino de OLE DB].ExternalColumns[CompanyName]"
-                      lineageId="Package\Add Shippers\Get Records.Outputs[Salida de origen de OLE DB].Columns[CompanyName]" />
+                      cachedLength="20"
+                      cachedName="TerritoryID"
+                      externalMetadataColumnId="Package\Add Territory\Add New.Inputs[Entrada de destino de OLE DB].ExternalColumns[TerritoryID]"
+                      lineageId="Package\Add Territory\Get Records.Outputs[Salida de origen de OLE DB].Columns[TerritoryID]" />
                     <inputColumn
-                      refId="Package\Add Shippers\Add New.Inputs[Entrada de destino de OLE DB].Columns[Phone]"
+                      refId="Package\Add Territory\Add New.Inputs[Entrada de destino de OLE DB].Columns[TerritoryDescription]"
                       cachedDataType="wstr"
-                      cachedLength="24"
-                      cachedName="Phone"
-                      externalMetadataColumnId="Package\Add Shippers\Add New.Inputs[Entrada de destino de OLE DB].ExternalColumns[Phone]"
-                      lineageId="Package\Add Shippers\Get Records.Outputs[Salida de origen de OLE DB].Columns[Phone]" />
+                      cachedLength="50"
+                      cachedName="TerritoryDescription"
+                      externalMetadataColumnId="Package\Add Territory\Add New.Inputs[Entrada de destino de OLE DB].ExternalColumns[TerritoryDescription]"
+                      lineageId="Package\Add Territory\Get Records.Outputs[Salida de origen de OLE DB].Columns[TerritoryDescription]" />
+                    <inputColumn
+                      refId="Package\Add Territory\Add New.Inputs[Entrada de destino de OLE DB].Columns[RegionDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="RegionDescription"
+                      externalMetadataColumnId="Package\Add Territory\Add New.Inputs[Entrada de destino de OLE DB].ExternalColumns[RegionDescription]"
+                      lineageId="Package\Add Territory\Get Records.Outputs[Salida de origen de OLE DB].Columns[RegionDescription]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Add Shippers\Add New.Inputs[Entrada de destino de OLE DB].ExternalColumns[ShipperID]"
+                      refId="Package\Add Territory\Add New.Inputs[Entrada de destino de OLE DB].ExternalColumns[TerritorySK]"
                       dataType="i4"
-                      name="ShipperID" />
+                      name="TerritorySK" />
                     <externalMetadataColumn
-                      refId="Package\Add Shippers\Add New.Inputs[Entrada de destino de OLE DB].ExternalColumns[CompanyName]"
+                      refId="Package\Add Territory\Add New.Inputs[Entrada de destino de OLE DB].ExternalColumns[TerritoryID]"
                       dataType="wstr"
-                      length="40"
-                      name="CompanyName" />
+                      length="20"
+                      name="TerritoryID" />
                     <externalMetadataColumn
-                      refId="Package\Add Shippers\Add New.Inputs[Entrada de destino de OLE DB].ExternalColumns[Phone]"
+                      refId="Package\Add Territory\Add New.Inputs[Entrada de destino de OLE DB].ExternalColumns[TerritoryDescription]"
                       dataType="wstr"
-                      length="24"
-                      name="Phone" />
+                      length="50"
+                      name="TerritoryDescription" />
+                    <externalMetadataColumn
+                      refId="Package\Add Territory\Add New.Inputs[Entrada de destino de OLE DB].ExternalColumns[RegionDescription]"
+                      dataType="wstr"
+                      length="50"
+                      name="RegionDescription" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Add Shippers\Add New.Outputs[Salida de error de destino de OLE DB]"
+                  refId="Package\Add Territory\Add New.Outputs[Salida de error de destino de OLE DB]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Salida de error de destino de OLE DB"
-                  synchronousInputId="Package\Add Shippers\Add New.Inputs[Entrada de destino de OLE DB]">
+                  synchronousInputId="Package\Add Territory\Add New.Inputs[Entrada de destino de OLE DB]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Add Shippers\Add New.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      refId="Package\Add Territory\Add New.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Add Shippers\Add New.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      lineageId="Package\Add Territory\Add New.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Add Shippers\Add New.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      refId="Package\Add Territory\Add New.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Add Shippers\Add New.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      lineageId="Package\Add Territory\Add New.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -214,7 +220,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Add Shippers\Búsqueda"
+              refId="Package\Add Territory\Búsqueda"
               componentClassID="Microsoft.Lookup"
               contactInfo="Búsqueda;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;6"
               description="Combina columnas adicionales con el flujo de datos mediante la búsqueda de valores en una tabla. Por ejemplo, se combina la columna 'id. de empleado' con la tabla de empleados para obtener la 'fecha de contratación' y 'el nombre de empleado'. Se recomienda esta transformación cuando hay suficiente espacio en memoria para la tabla de búsqueda."
@@ -227,14 +233,14 @@
                   description="Especifica la instrucción SQL que genera la tabla de búsqueda."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimShipper]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimTerritory]</property>
                 <property
                   dataType="System.String"
                   description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimShipper]) [refTable]
-where [refTable].[ShipperID] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimTerritory]) [refTable]
+where [refTable].[TerritoryID] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Especifica el tipo de conexión utilizado para tener acceso al conjunto de datos de referencia."
@@ -244,7 +250,7 @@ where [refTable].[ShipperID] = ?</property>
                   dataType="System.Int32"
                   description="Especifica el tipo de caché de la tabla de búsqueda."
                   name="CacheType"
-                  typeConverter="CacheType">2</property>
+                  typeConverter="CacheType">0</property>
                 <property
                   dataType="System.Int32"
                   description="Especifica cómo la transformación de búsquedas trata las filas sin entradas coincidentes en el conjunto de datos de referencia."
@@ -265,12 +271,12 @@ where [refTable].[ShipperID] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indica si se debe hacer referencia a metadatos en formato XML."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ShipperSK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ShipperID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CompanyName" dataType="DT_WSTR" length="40" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Phone" dataType="DT_WSTR" length="24" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="TerritorySK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TerritoryID" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TerritoryDescription" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RegionDescription" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
-                  name="ParameterMap">#{Package\Add Shippers\Get Records.Outputs[Salida de origen de OLE DB].Columns[ShipperID]};</property>
+                  name="ParameterMap">#{Package\Add Territory\Get Records.Outputs[Salida de origen de OLE DB].Columns[TerritoryID]};</property>
                 <property
                   dataType="System.Int32"
                   description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -282,7 +288,7 @@ where [refTable].[ShipperID] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Add Shippers\Búsqueda.Connections[OleDbConnection]"
+                  refId="Package\Add Territory\Búsqueda.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[Destination.NorthWindDW]"
                   connectionManagerRefId="Package.ConnectionManagers[Destination.NorthWindDW]"
                   description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
@@ -290,19 +296,20 @@ where [refTable].[ShipperID] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Add Shippers\Búsqueda.Inputs[Entrada de búsqueda]"
+                  refId="Package\Add Territory\Búsqueda.Inputs[Entrada de búsqueda]"
                   name="Entrada de búsqueda">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Add Shippers\Búsqueda.Inputs[Entrada de búsqueda].Columns[ShipperID]"
-                      cachedDataType="i4"
-                      cachedName="ShipperID"
-                      lineageId="Package\Add Shippers\Get Records.Outputs[Salida de origen de OLE DB].Columns[ShipperID]">
+                      refId="Package\Add Territory\Búsqueda.Inputs[Entrada de búsqueda].Columns[TerritoryID]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="TerritoryID"
+                      lineageId="Package\Add Territory\Get Records.Outputs[Salida de origen de OLE DB].Columns[TerritoryID]">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Especifica la columna de la tabla de referencia con la que se combina una columna."
-                          name="JoinToReferenceColumn">ShipperID</property>
+                          name="JoinToReferenceColumn">TerritoryID</property>
                         <property
                           dataType="System.Null"
                           description="Especifica la columna de la tabla de referencia de la que se copia una columna."
@@ -315,54 +322,54 @@ where [refTable].[ShipperID] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Add Shippers\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda]"
+                  refId="Package\Add Territory\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda]"
                   errorOrTruncationOperation="Búsqueda"
                   exclusionGroup="1"
                   name="Salida de entradas coincidentes de búsqueda"
-                  synchronousInputId="Package\Add Shippers\Búsqueda.Inputs[Entrada de búsqueda]">
+                  synchronousInputId="Package\Add Territory\Búsqueda.Inputs[Entrada de búsqueda]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Add Shippers\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[ShipperSK]"
+                      refId="Package\Add Territory\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[TerritorySK]"
                       dataType="i4"
                       errorOrTruncationOperation="Copiar columna"
-                      lineageId="Package\Add Shippers\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[ShipperSK]"
-                      name="ShipperSK"
+                      lineageId="Package\Add Territory\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[TerritorySK]"
+                      name="TerritorySK"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Especifica la columna de la tabla de referencia de la que se copia una columna."
-                          name="CopyFromReferenceColumn">ShipperSK</property>
+                          name="CopyFromReferenceColumn">TerritorySK</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Add Shippers\Búsqueda.Outputs[Salida de entradas no coincidentes de búsqueda]"
+                  refId="Package\Add Territory\Búsqueda.Outputs[Salida de entradas no coincidentes de búsqueda]"
                   description="Salida de búsqueda que trata las filas sin entradas coincidentes en el conjunto de datos de referencia. Utilice esta salida cuando la propiedad NoMatchBehavior esté establecida en 'Enviar las filas sin entradas coincidentes a la salida de entradas no coincidentes'."
                   exclusionGroup="1"
                   name="Salida de entradas no coincidentes de búsqueda"
-                  synchronousInputId="Package\Add Shippers\Búsqueda.Inputs[Entrada de búsqueda]">
+                  synchronousInputId="Package\Add Territory\Búsqueda.Inputs[Entrada de búsqueda]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Add Shippers\Búsqueda.Outputs[Salida de error de búsqueda]"
+                  refId="Package\Add Territory\Búsqueda.Outputs[Salida de error de búsqueda]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Salida de error de búsqueda"
-                  synchronousInputId="Package\Add Shippers\Búsqueda.Inputs[Entrada de búsqueda]">
+                  synchronousInputId="Package\Add Territory\Búsqueda.Inputs[Entrada de búsqueda]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Add Shippers\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      refId="Package\Add Territory\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Add Shippers\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      lineageId="Package\Add Territory\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Add Shippers\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      refId="Package\Add Territory\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Add Shippers\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      lineageId="Package\Add Territory\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -371,7 +378,7 @@ where [refTable].[ShipperID] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Add Shippers\Get Records"
+              refId="Package\Add Territory\Get Records"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
               description="Origen de OLE DB"
@@ -395,7 +402,7 @@ where [refTable].[ShipperID] = ?</property>
                   dataType="System.String"
                   description="Comando SQL para ejecutar."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXECUTE [dbo].[GetShipperChangesByRowVersion] @startRow = ?,@endRow = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXECUTE [dbo].[GetTerritoryChangesByRowVersion] @startRow = ?,@endRow = ?</property>
                 <property
                   dataType="System.String"
                   description="Variable que contiene el comando SQL para ejecutar."
@@ -416,11 +423,11 @@ where [refTable].[ShipperID] = ?</property>
                 <property
                   dataType="System.String"
                   description="Asignaciones entre los parámetros del comando SQL y las variables."
-                  name="ParameterMapping">"@startRow:Input",{534A474C-377B-4817-BC88-728C07636E7D};"@endRow:Input",{47A55BDD-154B-4B55-8239-E95EBB1345C7};</property>
+                  name="ParameterMapping">"@startRow:Input",{7D7FF4B6-A121-450E-B29A-23EB46AFE312};"@endRow:Input",{5B0C4FB5-56CB-49BE-A8EC-1AE1837B950E};</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Add Shippers\Get Records.Connections[OleDbConnection]"
+                  refId="Package\Add Territory\Get Records.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[Source.NorthWindOLTP]"
                   connectionManagerRefId="Package.ConnectionManagers[Source.NorthWindOLTP]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
@@ -428,89 +435,92 @@ where [refTable].[ShipperID] = ?</property>
               </connections>
               <outputs>
                 <output
-                  refId="Package\Add Shippers\Get Records.Outputs[Salida de origen de OLE DB]"
+                  refId="Package\Add Territory\Get Records.Outputs[Salida de origen de OLE DB]"
                   name="Salida de origen de OLE DB">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Add Shippers\Get Records.Outputs[Salida de origen de OLE DB].Columns[ShipperID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add Shippers\Get Records.Outputs[Salida de origen de OLE DB].ExternalColumns[ShipperID]"
-                      lineageId="Package\Add Shippers\Get Records.Outputs[Salida de origen de OLE DB].Columns[ShipperID]"
-                      name="ShipperID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Add Shippers\Get Records.Outputs[Salida de origen de OLE DB].Columns[CompanyName]"
+                      refId="Package\Add Territory\Get Records.Outputs[Salida de origen de OLE DB].Columns[TerritoryID]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add Shippers\Get Records.Outputs[Salida de origen de OLE DB].ExternalColumns[CompanyName]"
-                      length="40"
-                      lineageId="Package\Add Shippers\Get Records.Outputs[Salida de origen de OLE DB].Columns[CompanyName]"
-                      name="CompanyName"
+                      externalMetadataColumnId="Package\Add Territory\Get Records.Outputs[Salida de origen de OLE DB].ExternalColumns[TerritoryID]"
+                      length="20"
+                      lineageId="Package\Add Territory\Get Records.Outputs[Salida de origen de OLE DB].Columns[TerritoryID]"
+                      name="TerritoryID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Add Shippers\Get Records.Outputs[Salida de origen de OLE DB].Columns[Phone]"
+                      refId="Package\Add Territory\Get Records.Outputs[Salida de origen de OLE DB].Columns[TerritoryDescription]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add Shippers\Get Records.Outputs[Salida de origen de OLE DB].ExternalColumns[Phone]"
-                      length="24"
-                      lineageId="Package\Add Shippers\Get Records.Outputs[Salida de origen de OLE DB].Columns[Phone]"
-                      name="Phone"
+                      externalMetadataColumnId="Package\Add Territory\Get Records.Outputs[Salida de origen de OLE DB].ExternalColumns[TerritoryDescription]"
+                      length="50"
+                      lineageId="Package\Add Territory\Get Records.Outputs[Salida de origen de OLE DB].Columns[TerritoryDescription]"
+                      name="TerritoryDescription"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Add Territory\Get Records.Outputs[Salida de origen de OLE DB].Columns[RegionDescription]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Add Territory\Get Records.Outputs[Salida de origen de OLE DB].ExternalColumns[RegionDescription]"
+                      length="50"
+                      lineageId="Package\Add Territory\Get Records.Outputs[Salida de origen de OLE DB].Columns[RegionDescription]"
+                      name="RegionDescription"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Add Shippers\Get Records.Outputs[Salida de origen de OLE DB].ExternalColumns[ShipperID]"
-                      dataType="i4"
-                      name="ShipperID" />
-                    <externalMetadataColumn
-                      refId="Package\Add Shippers\Get Records.Outputs[Salida de origen de OLE DB].ExternalColumns[CompanyName]"
+                      refId="Package\Add Territory\Get Records.Outputs[Salida de origen de OLE DB].ExternalColumns[TerritoryID]"
                       dataType="wstr"
-                      length="40"
-                      name="CompanyName" />
+                      length="20"
+                      name="TerritoryID" />
                     <externalMetadataColumn
-                      refId="Package\Add Shippers\Get Records.Outputs[Salida de origen de OLE DB].ExternalColumns[Phone]"
+                      refId="Package\Add Territory\Get Records.Outputs[Salida de origen de OLE DB].ExternalColumns[TerritoryDescription]"
                       dataType="wstr"
-                      length="24"
-                      name="Phone" />
+                      length="50"
+                      name="TerritoryDescription" />
+                    <externalMetadataColumn
+                      refId="Package\Add Territory\Get Records.Outputs[Salida de origen de OLE DB].ExternalColumns[RegionDescription]"
+                      dataType="wstr"
+                      length="50"
+                      name="RegionDescription" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Add Shippers\Get Records.Outputs[Salida de error de origen de OLE DB]"
+                  refId="Package\Add Territory\Get Records.Outputs[Salida de error de origen de OLE DB]"
                   isErrorOut="true"
                   name="Salida de error de origen de OLE DB">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Add Shippers\Get Records.Outputs[Salida de error de origen de OLE DB].Columns[ShipperID]"
-                      dataType="i4"
-                      lineageId="Package\Add Shippers\Get Records.Outputs[Salida de error de origen de OLE DB].Columns[ShipperID]"
-                      name="ShipperID" />
-                    <outputColumn
-                      refId="Package\Add Shippers\Get Records.Outputs[Salida de error de origen de OLE DB].Columns[CompanyName]"
+                      refId="Package\Add Territory\Get Records.Outputs[Salida de error de origen de OLE DB].Columns[TerritoryID]"
                       dataType="wstr"
-                      length="40"
-                      lineageId="Package\Add Shippers\Get Records.Outputs[Salida de error de origen de OLE DB].Columns[CompanyName]"
-                      name="CompanyName" />
+                      length="20"
+                      lineageId="Package\Add Territory\Get Records.Outputs[Salida de error de origen de OLE DB].Columns[TerritoryID]"
+                      name="TerritoryID" />
                     <outputColumn
-                      refId="Package\Add Shippers\Get Records.Outputs[Salida de error de origen de OLE DB].Columns[Phone]"
+                      refId="Package\Add Territory\Get Records.Outputs[Salida de error de origen de OLE DB].Columns[TerritoryDescription]"
                       dataType="wstr"
-                      length="24"
-                      lineageId="Package\Add Shippers\Get Records.Outputs[Salida de error de origen de OLE DB].Columns[Phone]"
-                      name="Phone" />
+                      length="50"
+                      lineageId="Package\Add Territory\Get Records.Outputs[Salida de error de origen de OLE DB].Columns[TerritoryDescription]"
+                      name="TerritoryDescription" />
                     <outputColumn
-                      refId="Package\Add Shippers\Get Records.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      refId="Package\Add Territory\Get Records.Outputs[Salida de error de origen de OLE DB].Columns[RegionDescription]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Add Territory\Get Records.Outputs[Salida de error de origen de OLE DB].Columns[RegionDescription]"
+                      name="RegionDescription" />
+                    <outputColumn
+                      refId="Package\Add Territory\Get Records.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Add Shippers\Get Records.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      lineageId="Package\Add Territory\Get Records.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Add Shippers\Get Records.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      refId="Package\Add Territory\Get Records.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Add Shippers\Get Records.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      lineageId="Package\Add Territory\Get Records.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -519,7 +529,7 @@ where [refTable].[ShipperID] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Add Shippers\Loading staging"
+              refId="Package\Add Territory\Loading staging"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
               description="Destino de OLE DB"
@@ -534,7 +544,7 @@ where [refTable].[ShipperID] = ?</property>
                 <property
                   dataType="System.String"
                   description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                  name="OpenRowset">[staging].[shipper]</property>
+                  name="OpenRowset">[staging].[territory]</property>
                 <property
                   dataType="System.String"
                   description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
@@ -576,7 +586,7 @@ where [refTable].[ShipperID] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Add Shippers\Loading staging.Connections[OleDbConnection]"
+                  refId="Package\Add Territory\Loading staging.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[Destination.NorthWindDW]"
                   connectionManagerRefId="Package.ConnectionManagers[Destination.NorthWindDW]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
@@ -584,70 +594,70 @@ where [refTable].[ShipperID] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Add Shippers\Loading staging.Inputs[Entrada de destino de OLE DB]"
+                  refId="Package\Add Territory\Loading staging.Inputs[Entrada de destino de OLE DB]"
                   errorOrTruncationOperation="Insertar"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="Entrada de destino de OLE DB">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Add Shippers\Loading staging.Inputs[Entrada de destino de OLE DB].Columns[CompanyName]"
+                      refId="Package\Add Territory\Loading staging.Inputs[Entrada de destino de OLE DB].Columns[TerritoryDescription]"
                       cachedDataType="wstr"
-                      cachedLength="40"
-                      cachedName="CompanyName"
-                      externalMetadataColumnId="Package\Add Shippers\Loading staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[CompanyName]"
-                      lineageId="Package\Add Shippers\Get Records.Outputs[Salida de origen de OLE DB].Columns[CompanyName]" />
+                      cachedLength="50"
+                      cachedName="TerritoryDescription"
+                      externalMetadataColumnId="Package\Add Territory\Loading staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[TerritoryDescription]"
+                      lineageId="Package\Add Territory\Get Records.Outputs[Salida de origen de OLE DB].Columns[TerritoryDescription]" />
                     <inputColumn
-                      refId="Package\Add Shippers\Loading staging.Inputs[Entrada de destino de OLE DB].Columns[Phone]"
-                      cachedDataType="wstr"
-                      cachedLength="24"
-                      cachedName="Phone"
-                      externalMetadataColumnId="Package\Add Shippers\Loading staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[Phone]"
-                      lineageId="Package\Add Shippers\Get Records.Outputs[Salida de origen de OLE DB].Columns[Phone]" />
-                    <inputColumn
-                      refId="Package\Add Shippers\Loading staging.Inputs[Entrada de destino de OLE DB].Columns[ShipperSK]"
+                      refId="Package\Add Territory\Loading staging.Inputs[Entrada de destino de OLE DB].Columns[TerritorySK]"
                       cachedDataType="i4"
-                      cachedName="ShipperSK"
-                      externalMetadataColumnId="Package\Add Shippers\Loading staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[ShipperSK]"
-                      lineageId="Package\Add Shippers\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[ShipperSK]" />
+                      cachedName="TerritorySK"
+                      externalMetadataColumnId="Package\Add Territory\Loading staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[TerritorySK]"
+                      lineageId="Package\Add Territory\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[TerritorySK]" />
+                    <inputColumn
+                      refId="Package\Add Territory\Loading staging.Inputs[Entrada de destino de OLE DB].Columns[RegionDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="RegionDescription"
+                      externalMetadataColumnId="Package\Add Territory\Loading staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[RegionDescription]"
+                      lineageId="Package\Add Territory\Get Records.Outputs[Salida de origen de OLE DB].Columns[RegionDescription]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Add Shippers\Loading staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[ShipperSK]"
+                      refId="Package\Add Territory\Loading staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[TerritorySK]"
                       dataType="i4"
-                      name="ShipperSK" />
+                      name="TerritorySK" />
                     <externalMetadataColumn
-                      refId="Package\Add Shippers\Loading staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[CompanyName]"
+                      refId="Package\Add Territory\Loading staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[TerritoryDescription]"
                       dataType="wstr"
-                      length="40"
-                      name="CompanyName" />
+                      length="50"
+                      name="TerritoryDescription" />
                     <externalMetadataColumn
-                      refId="Package\Add Shippers\Loading staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[Phone]"
+                      refId="Package\Add Territory\Loading staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[RegionDescription]"
                       dataType="wstr"
-                      length="24"
-                      name="Phone" />
+                      length="50"
+                      name="RegionDescription" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Add Shippers\Loading staging.Outputs[Salida de error de destino de OLE DB]"
+                  refId="Package\Add Territory\Loading staging.Outputs[Salida de error de destino de OLE DB]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Salida de error de destino de OLE DB"
-                  synchronousInputId="Package\Add Shippers\Loading staging.Inputs[Entrada de destino de OLE DB]">
+                  synchronousInputId="Package\Add Territory\Loading staging.Inputs[Entrada de destino de OLE DB]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Add Shippers\Loading staging.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      refId="Package\Add Territory\Loading staging.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Add Shippers\Loading staging.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      lineageId="Package\Add Territory\Loading staging.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Add Shippers\Loading staging.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      refId="Package\Add Territory\Loading staging.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Add Shippers\Loading staging.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      lineageId="Package\Add Territory\Loading staging.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -658,20 +668,20 @@ where [refTable].[ShipperID] = ?</property>
           </components>
           <paths>
             <path
-              refId="Package\Add Shippers.Paths[Salida de entradas coincidentes de búsqueda]"
-              endId="Package\Add Shippers\Loading staging.Inputs[Entrada de destino de OLE DB]"
+              refId="Package\Add Territory.Paths[Salida de entradas coincidentes de búsqueda]"
+              endId="Package\Add Territory\Loading staging.Inputs[Entrada de destino de OLE DB]"
               name="Salida de entradas coincidentes de búsqueda"
-              startId="Package\Add Shippers\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda]" />
+              startId="Package\Add Territory\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda]" />
             <path
-              refId="Package\Add Shippers.Paths[Salida de entradas no coincidentes de búsqueda]"
-              endId="Package\Add Shippers\Add New.Inputs[Entrada de destino de OLE DB]"
+              refId="Package\Add Territory.Paths[Salida de entradas no coincidentes de búsqueda]"
+              endId="Package\Add Territory\Add New.Inputs[Entrada de destino de OLE DB]"
               name="Salida de entradas no coincidentes de búsqueda"
-              startId="Package\Add Shippers\Búsqueda.Outputs[Salida de entradas no coincidentes de búsqueda]" />
+              startId="Package\Add Territory\Búsqueda.Outputs[Salida de entradas no coincidentes de búsqueda]" />
             <path
-              refId="Package\Add Shippers.Paths[Salida de origen de OLE DB]"
-              endId="Package\Add Shippers\Búsqueda.Inputs[Entrada de búsqueda]"
+              refId="Package\Add Territory.Paths[Salida de origen de OLE DB]"
+              endId="Package\Add Territory\Búsqueda.Inputs[Entrada de búsqueda]"
               name="Salida de origen de OLE DB"
-              startId="Package\Add Shippers\Get Records.Outputs[Salida de origen de OLE DB]" />
+              startId="Package\Add Territory\Get Records.Outputs[Salida de origen de OLE DB]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -680,7 +690,7 @@ where [refTable].[ShipperID] = ?</property>
       DTS:refId="Package\clean-up staging area"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
-      DTS:DTSID="{0689476D-90A8-40EB-9203-257C8BC7216B}"
+      DTS:DTSID="{6FBC2434-68DD-43BC-A969-856623FC2028}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="clean-up staging area"
@@ -689,15 +699,15 @@ where [refTable].[ShipperID] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{8363D8EB-D45A-4026-A724-8570A37E6D64}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[shipper]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{1CEB2DC3-644C-4F6F-B666-6DA51D07E575}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[territory]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Get Database RowVersion"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
-      DTS:DTSID="{8D0A5513-415E-42CA-BAAA-BE23F73C1D86}"
+      DTS:DTSID="{6D4A5169-6598-4161-8C07-3691391DBAEB}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Database RowVersion"
@@ -706,7 +716,7 @@ where [refTable].[ShipperID] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{F111AE29-F370-42C6-A1E7-3B56D7DB236C}"
+          SQLTask:Connection="{595EABC6-EA77-4B0D-8E23-F8FF2966C1E7}"
           SQLTask:SqlStatementSource="EXECUTE [dbo].[GetDatabaseRowVersion]"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -719,7 +729,7 @@ where [refTable].[ShipperID] = ?</property>
       DTS:refId="Package\Get LastRowVersion"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
-      DTS:DTSID="{D7A2DC8C-D475-40DD-8B9C-8648F332DB2B}"
+      DTS:DTSID="{72804132-F034-4AD5-9190-3A10FBA3B439}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LastRowVersion"
@@ -728,8 +738,8 @@ where [refTable].[ShipperID] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{8363D8EB-D45A-4026-A724-8570A37E6D64}"
-          SQLTask:SqlStatementSource="EXECUTE [dbo].[GetLastPackageRowVersion] @tableName = 'Shipper'"
+          SQLTask:Connection="{1CEB2DC3-644C-4F6F-B666-6DA51D07E575}"
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[GetLastPackageRowVersion] @tableName = 'Territory'"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="LastRowVersion"
@@ -741,7 +751,7 @@ where [refTable].[ShipperID] = ?</property>
       DTS:refId="Package\Sync staging data"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
-      DTS:DTSID="{8897D272-952E-4B85-9C85-628087A3CF48}"
+      DTS:DTSID="{B5689E08-61C0-4F09-B340-E0DE020C4EC3}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Sync staging data"
@@ -750,15 +760,15 @@ where [refTable].[ShipperID] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{8363D8EB-D45A-4026-A724-8570A37E6D64}"
-          SQLTask:SqlStatementSource="EXECUTE [dbo].[DW_MergeDimShipper]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{1CEB2DC3-644C-4F6F-B666-6DA51D07E575}"
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[DW_MergeDimTerritory]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Update LastRowVersion"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
-      DTS:DTSID="{14C4320A-2A25-44D0-A1AB-BCDC58DB0204}"
+      DTS:DTSID="{36D4C5B4-2F0F-4C0A-A3F1-0FD0212B8549}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update LastRowVersion"
@@ -767,8 +777,8 @@ where [refTable].[ShipperID] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{8363D8EB-D45A-4026-A724-8570A37E6D64}"
-          SQLTask:SqlStatementSource="EXECUTE [dbo].[UpdateLastPackageRowVersion] @tableName = 'Shipper' ,@lastRowVersion = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:Connection="{1CEB2DC3-644C-4F6F-B666-6DA51D07E575}"
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[UpdateLastPackageRowVersion] @tableName = 'Territory' ,@lastRowVersion = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="User::dbts"
@@ -783,7 +793,7 @@ where [refTable].[ShipperID] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción]"
       DTS:CreationName=""
-      DTS:DTSID="{15B225F9-4968-40CC-93B8-06AB97054F69}"
+      DTS:DTSID="{BF53B119-7197-4445-92DC-14AAC42F221A}"
       DTS:From="Package\Get Database RowVersion"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción"
@@ -791,7 +801,7 @@ where [refTable].[ShipperID] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
       DTS:CreationName=""
-      DTS:DTSID="{3775A415-EDBC-4DAE-BE44-C267F1F6EFF1}"
+      DTS:DTSID="{033A7150-BAD2-4C2E-9FF8-97C291F72936}"
       DTS:From="Package\Get LastRowVersion"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 1"
@@ -799,23 +809,23 @@ where [refTable].[ShipperID] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
       DTS:CreationName=""
-      DTS:DTSID="{788DFC99-A99C-4A04-AC0D-F02B6D4DAFB0}"
+      DTS:DTSID="{DF836EAA-FC1B-45BF-8283-EC5F97AC091C}"
       DTS:From="Package\clean-up staging area"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 2"
-      DTS:To="Package\Add Shippers" />
+      DTS:To="Package\Add Territory" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 3]"
       DTS:CreationName=""
-      DTS:DTSID="{82A0E43D-12C2-4159-8D6E-FDB8B98C8D85}"
-      DTS:From="Package\Add Shippers"
+      DTS:DTSID="{EF2BADC7-0BC3-4488-960E-997CD3989031}"
+      DTS:From="Package\Add Territory"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 3"
       DTS:To="Package\Sync staging data" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 4]"
       DTS:CreationName=""
-      DTS:DTSID="{9F38357F-B690-4106-AF5D-6FD2C9DC4A07}"
+      DTS:DTSID="{7FA67399-4649-4D02-B112-C9C329C7E74E}"
       DTS:From="Package\Sync staging data"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 4"
@@ -834,8 +844,8 @@ where [refTable].[ShipperID] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="145,42"
-          Id="Package\Add Shippers"
+          Size="143,42"
+          Id="Package\Add Territory"
           TopLeft="239,277" />
         <NodeLayout
           Size="185,42"
@@ -903,18 +913,30 @@ where [refTable].[ShipperID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 2]"
-          TopLeft="315,253">
+          TopLeft="318.5,253">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,24"
+              EndConnector="-8,24"
               Start="0,0"
-              End="0,16.5">
+              End="-8,16.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.5" />
+                    End="0,8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8"
+                    Point2="0,12"
+                    Point3="-4,12" />
+                  <mssgle:LineSegment
+                    End="-4,12" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4,12"
+                    Point2="-8,12"
+                    Point3="-8,16" />
+                  <mssgle:LineSegment
+                    End="-8,16.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -925,7 +947,7 @@ where [refTable].[ShipperID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 3]"
-          TopLeft="312.25,319">
+          TopLeft="311.75,319">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -971,40 +993,40 @@ where [refTable].[ShipperID] = ?</property>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Add Shippers">
+    design-time-name="Package\Add Territory">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="123,42"
+          Id="Package\Add Territory\Add New"
+          TopLeft="358,242" />
+        <NodeLayout
           Size="141,42"
-          Id="Package\Add Shippers\Get Records"
+          Id="Package\Add Territory\Get Records"
           TopLeft="174,70" />
         <NodeLayout
-          Size="129,42"
-          Id="Package\Add Shippers\Búsqueda"
-          TopLeft="180,155" />
-        <NodeLayout
           Size="157,42"
-          Id="Package\Add Shippers\Loading staging"
+          Id="Package\Add Territory\Loading staging"
           TopLeft="79,243" />
         <NodeLayout
-          Size="123,42"
-          Id="Package\Add Shippers\Add New"
-          TopLeft="358,242" />
+          Size="129,42"
+          Id="Package\Add Territory\Búsqueda"
+          TopLeft="185,152" />
         <EdgeLayout
-          Id="Package\Add Shippers.Paths[Salida de origen de OLE DB]"
-          TopLeft="244.5,112">
+          Id="Package\Add Territory.Paths[Salida de origen de OLE DB]"
+          TopLeft="247,112">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43"
+              EndConnector="0,40"
               Start="0,0"
-              End="0,35.5">
+              End="0,32.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.5" />
+                    End="0,32.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1014,74 +1036,74 @@ where [refTable].[ShipperID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Add Shippers.Paths[Salida de entradas no coincidentes de búsqueda]"
-          TopLeft="264.666666666667,197">
+          Id="Package\Add Territory.Paths[Salida de entradas coincidentes de búsqueda]"
+          TopLeft="249.5,194">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="154.833333333333,45"
+              EndConnector="-92,49"
               Start="0,0"
-              End="154.833333333333,37.5">
+              End="-92,41.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.3307810107198" />
+                    End="0,20.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.3307810107198"
-                    Point2="0,18.3307810107198"
-                    Point3="4,18.3307810107198" />
+                    Point1="0,20.5"
+                    Point2="0,24.5"
+                    Point3="-4,24.5" />
                   <mssgle:LineSegment
-                    End="150.833333333333,18.3307810107198" />
+                    End="-88,24.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="150.833333333333,18.3307810107198"
-                    Point2="154.833333333333,18.3307810107198"
-                    Point3="154.833333333333,22.3307810107198" />
+                    Point1="-88,24.5"
+                    Point2="-92,24.5"
+                    Point3="-92,28.5" />
                   <mssgle:LineSegment
-                    End="154.833333333333,37.5" />
+                    End="-92,41.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-29.4723567708335,23.3307810107198,213.778046875,12.1953125"
+              BoundingBox="-145.8190234375,29.5,199.638046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Add Shippers.Paths[Salida de entradas coincidentes de búsqueda]"
-          TopLeft="224.333333333333,197">
+          Id="Package\Add Territory.Paths[Salida de entradas no coincidentes de búsqueda]"
+          TopLeft="269.666666666667,194">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-66.8333333333333,46"
+              EndConnector="149.833333333333,48"
               Start="0,0"
-              End="-66.8333333333333,38.5">
+              End="149.833333333333,40.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.7381316998469" />
+                    End="0,15.5528330781011" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.7381316998469"
-                    Point2="0,18.7381316998469"
-                    Point3="-4,18.7381316998469" />
+                    Point1="0,15.5528330781011"
+                    Point2="0,19.5528330781011"
+                    Point3="4,19.5528330781011" />
                   <mssgle:LineSegment
-                    End="-62.8333333333333,18.7381316998469" />
+                    End="145.833333333333,19.5528330781011" />
                   <mssgle:CubicBezierSegment
-                    Point1="-62.8333333333333,18.7381316998469"
-                    Point2="-66.8333333333333,18.7381316998469"
-                    Point3="-66.8333333333333,22.7381316998469" />
+                    Point1="145.833333333333,19.5528330781011"
+                    Point2="149.833333333333,19.5528330781011"
+                    Point3="149.833333333333,23.5528330781011" />
                   <mssgle:LineSegment
-                    End="-66.8333333333333,38.5" />
+                    End="149.833333333333,40.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-133.235690104167,23.7381316998469,199.638046875,12.1953125"
+              BoundingBox="-31.9723567708333,24.5528330781011,213.778046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1089,59 +1111,59 @@ where [refTable].[ShipperID] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Add Shippers\Búsqueda">
+    design-time-name="Package\Add Territory\Add New">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Add Territory\Get Records">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Add Territory\Loading staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Add Territory\Búsqueda">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[DimShipper]</Value>
+          type="q3:string">[dbo].[DimTerritory]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Add Shippers\Add New">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Add Shippers\Get Records">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Add Shippers\Loading staging">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
