@@ -2,7 +2,7 @@
 AS
 BEGIN
 
-	UPDATE dc
+	UPDATE dfo
 	SET [OrderDateKey]    = so.[OrderDateKey]
 	   ,[RequiredDateKey] = so.[RequiredDateKey]
 	   ,[ShippedDateKey]  = so.[ShippedDateKey]

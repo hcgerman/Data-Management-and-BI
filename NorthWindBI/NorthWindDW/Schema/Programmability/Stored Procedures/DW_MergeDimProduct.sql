@@ -2,7 +2,7 @@
 AS
 BEGIN
 
-	UPDATE dc
+	UPDATE dp
 	SET [ProductName]  = sp.[ProductName]
 		,[SupplierCompanyName] = sp.[SupplierCompanyName]
 		,[SupplierCountry] = sp.[SupplierCountry]

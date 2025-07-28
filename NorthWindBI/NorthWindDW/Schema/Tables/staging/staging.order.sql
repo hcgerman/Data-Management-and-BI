@@ -5,7 +5,7 @@
 	
 	[ProductSK] [int] NOT NULL,
 	[CustomerSK] [int] NULL,
-	[EmployeeID] [int] NULL,
+	[EmployeeSK] [int] NULL,
 	[ShipperSK] [int] NULL,
 
 	[UnitPrice] [money] NOT NULL,

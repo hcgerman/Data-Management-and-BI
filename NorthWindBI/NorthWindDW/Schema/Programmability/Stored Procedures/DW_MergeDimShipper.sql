@@ -2,7 +2,7 @@
 AS
 BEGIN
 
-	UPDATE det
+	UPDATE ds
 	SET [CompanyName] = ss.[CompanyName]
 		,[Phone] = ss.[Phone]
 
