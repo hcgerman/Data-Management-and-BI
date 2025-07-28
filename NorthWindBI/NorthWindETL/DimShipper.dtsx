@@ -11,8 +11,8 @@
   DTS:LocaleID="16394"
   DTS:ObjectName="DimShipper"
   DTS:PackageType="5"
-  DTS:VersionBuild="38"
-  DTS:VersionGUID="{8666CC6A-E531-4224-9CF2-F17A963434EE}">
+  DTS:VersionBuild="41"
+  DTS:VersionGUID="{4678B6AA-47E0-43D4-A6C8-63B78449F400}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -92,7 +92,7 @@
                 <property
                   dataType="System.String"
                   description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                  name="OpenRowset">[Add New]</property>
+                  name="OpenRowset">[dbo].[DimShipper]</property>
                 <property
                   dataType="System.String"
                   description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
@@ -185,6 +185,10 @@
                       dataType="wstr"
                       length="24"
                       name="Phone" />
+                    <externalMetadataColumn
+                      refId="Package\Add Shippers\Add New.Inputs[Entrada de destino de OLE DB].ExternalColumns[ShipperSK]"
+                      dataType="i4"
+                      name="ShipperSK" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -244,7 +248,7 @@ where [refTable].[ShipperID] = ?</property>
                   dataType="System.Int32"
                   description="Especifica el tipo de caché de la tabla de búsqueda."
                   name="CacheType"
-                  typeConverter="CacheType">2</property>
+                  typeConverter="CacheType">0</property>
                 <property
                   dataType="System.Int32"
                   description="Especifica cómo la transformación de búsquedas trata las filas sin entradas coincidentes en el conjunto de datos de referencia."
@@ -976,21 +980,57 @@ where [refTable].[ShipperID] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="141,42"
-          Id="Package\Add Shippers\Get Records"
-          TopLeft="174,70" />
-        <NodeLayout
           Size="129,42"
           Id="Package\Add Shippers\Búsqueda"
           TopLeft="180,155" />
         <NodeLayout
-          Size="157,42"
-          Id="Package\Add Shippers\Loading staging"
-          TopLeft="79,243" />
-        <NodeLayout
           Size="123,42"
           Id="Package\Add Shippers\Add New"
           TopLeft="358,242" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Add Shippers\Get Records"
+          TopLeft="174,70" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Add Shippers\Loading staging"
+          TopLeft="79,243" />
+        <EdgeLayout
+          Id="Package\Add Shippers.Paths[Salida de entradas coincidentes de búsqueda]"
+          TopLeft="224.333333333333,197">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-66.8333333333333,46"
+              Start="0,0"
+              End="-66.8333333333333,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.7381316998469" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.7381316998469"
+                    Point2="0,18.7381316998469"
+                    Point3="-4,18.7381316998469" />
+                  <mssgle:LineSegment
+                    End="-62.8333333333333,18.7381316998469" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-62.8333333333333,18.7381316998469"
+                    Point2="-66.8333333333333,18.7381316998469"
+                    Point3="-66.8333333333333,22.7381316998469" />
+                  <mssgle:LineSegment
+                    End="-66.8333333333333,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-133.235690104167,23.7381316998469,199.638046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Add Shippers.Paths[Salida de origen de OLE DB]"
           TopLeft="244.5,112">
@@ -1045,43 +1085,7 @@ where [refTable].[ShipperID] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-29.4723567708335,23.3307810107198,213.778046875,12.1953125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Add Shippers.Paths[Salida de entradas coincidentes de búsqueda]"
-          TopLeft="224.333333333333,197">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-66.8333333333333,46"
-              Start="0,0"
-              End="-66.8333333333333,38.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.7381316998469" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.7381316998469"
-                    Point2="0,18.7381316998469"
-                    Point3="-4,18.7381316998469" />
-                  <mssgle:LineSegment
-                    End="-62.8333333333333,18.7381316998469" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-62.8333333333333,18.7381316998469"
-                    Point2="-66.8333333333333,18.7381316998469"
-                    Point3="-66.8333333333333,22.7381316998469" />
-                  <mssgle:LineSegment
-                    End="-66.8333333333333,38.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-133.235690104167,23.7381316998469,199.638046875,12.1953125"
+              BoundingBox="-29.4723567708333,23.3307810107198,213.778046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1094,7 +1098,7 @@ where [refTable].[ShipperID] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1104,7 +1108,7 @@ where [refTable].[ShipperID] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

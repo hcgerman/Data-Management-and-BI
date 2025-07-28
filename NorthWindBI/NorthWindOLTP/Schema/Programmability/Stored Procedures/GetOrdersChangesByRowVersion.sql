@@ -6,7 +6,8 @@
 AS
 BEGIN
 	SELECT ord.[OrderID]
-		  ,ori.[ProductID]
+		  ,ord.[OrderID] as [OrderIDD]
+		  ,ori.[ProductID] as [ProductIDD]
 		  ,OrderDateKey = CONVERT(INT,
 							(CONVERT(CHAR(4),DATEPART(YEAR,ord.[OrderDate]))
 						  + CASE 

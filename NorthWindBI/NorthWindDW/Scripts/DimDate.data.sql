@@ -2,7 +2,7 @@
               FROM [dbo].[DimDate])
  BEGIN
 	BEGIN TRAN 
-		DECLARE @startdate DATE = '1998-01-01',
+		DECLARE @startdate DATE = '1980-01-01',
 				@enddate   DATE = '2025-12-31';
 		DECLARE @datelist TABLE(FullDate DATE);
 

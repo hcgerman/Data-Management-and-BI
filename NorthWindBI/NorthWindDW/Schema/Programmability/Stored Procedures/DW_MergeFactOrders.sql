@@ -27,6 +27,6 @@ BEGIN
 	   ,[ShipPostalCode]  = so.[ShipPostalCode]
 	   ,[ShipCountry]     = so.[ShipCountry]
 	FROM [dbo].[FactOrders]         dfo
-	INNER JOIN [staging].[order] so ON (dfo.[OrderID] = so.[OrderID] AND dfo.ItemID = so.[ItemID])
+	INNER JOIN [staging].[order] so ON (dfo.[OrderID] = so.[OrderID] AND dfo.OrderIDD = so.OrderIDD AND dfo.ProductIDD = so.ProductIDD)
 END
 GO

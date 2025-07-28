@@ -1,7 +1,8 @@
 ﻿CREATE TABLE [staging].[order]
 (
 	[OrderID] [int] NOT NULL,
-	[ItemID]  [int] NOT NULL,
+	[OrderIDD] [int] NOT NULL,
+	[ProductIDD]  [int] NOT NULL,
 	
 	[ProductSK] [int] NOT NULL,
 	[CustomerSK] [int] NULL,

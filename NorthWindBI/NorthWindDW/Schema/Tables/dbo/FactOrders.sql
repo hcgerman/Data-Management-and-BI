@@ -1,7 +1,8 @@
 ﻿CREATE TABLE [dbo].[FactOrders]
 (
 	[OrderID] [int] NOT NULL,
-	[ItemID]  [int] NOT NULL,
+	[OrderIDD] [int] NOT NULL,
+	[ProductIDD]  [int] NOT NULL,
 	
 	[ProductSK] [int] NOT NULL,
 	[CustomerSK] [int] NULL,
@@ -30,7 +31,7 @@
 )
 GO
 
-ALTER TABLE [dbo].[FactOrders] ADD CONSTRAINT PK_FactOrders PRIMARY KEY(OrderID,ItemID);
+ALTER TABLE [dbo].[FactOrders] ADD CONSTRAINT PK_FactOrders PRIMARY KEY(OrderID,OrderIDD, ProductIDD);
 GO
 
 ALTER TABLE [dbo].[FactOrders] ADD CONSTRAINT [FK_DimProduct] FOREIGN KEY([ProductSK]) REFERENCES [dbo].[DimProduct] ([ProductSK]);
