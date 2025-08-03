@@ -187,6 +187,13 @@
             "dataType": "int64",
             "isHidden": true,
             "sourceColumn": "CalendarSemester"
+          },
+          {
+            "type": "calculated",
+            "name": "Year",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "CONCATENATE('Date'[CalendarYear],\"\")"
           }
         ],
         "partitions": [
